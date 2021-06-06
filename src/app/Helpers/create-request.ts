@@ -16,10 +16,10 @@ export interface CreateProductRequest {
 }
 
 export interface SearchProduct {
-	name: string;
-	price: number;
-	SKUCode: string;
-	description: string;
-	categoryId: number;
-	subCategoryId: number;
+	name: string | null;
+	price: number | null;
+	SKUCode: string | null;
+	description: string | null;
+	categoryId: number | null;
+	subCategoryId: number | null;
 }

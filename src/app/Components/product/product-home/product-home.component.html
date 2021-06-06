@@ -57,12 +57,20 @@
                         <div class="clr-col-lg-12 clr-col-md-12 clr-col-12">
                             <clr-datagrid>
                                 <clr-dg-column>Name</clr-dg-column>
+								<clr-dg-column>Price $</clr-dg-column>
+								<clr-dg-column>Description</clr-dg-column>
+								<clr-dg-column>SKU Code</clr-dg-column>
 								<clr-dg-column>SubCategory</clr-dg-column>
+								<clr-dg-column>Category</clr-dg-column>
 								<clr-dg-column>Delete Action</clr-dg-column>
 
                                 <clr-dg-row *ngFor="let item of list" [clrDgItem]="list">
                                     <clr-dg-cell>{{item.name}}</clr-dg-cell>
+									<clr-dg-cell>{{item.price}}</clr-dg-cell>
+									<clr-dg-cell>{{item.description}}</clr-dg-cell>
+									<clr-dg-cell>{{item.skuCode}}</clr-dg-cell>
 									<clr-dg-cell>{{item.subCategory}}</clr-dg-cell>
+									<clr-dg-cell>{{item.category}}</clr-dg-cell>
                                     
 									<clr-dg-cell>
                                         <button class="btn btn-danger float-items-right" (click)="delete(item.id)">Delete</button>
