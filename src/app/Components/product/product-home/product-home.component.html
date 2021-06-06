@@ -1,0 +1,76 @@
+<div class="clr-col-12">
+    <div class="content-area">
+        <div class="card">
+            <div class="card-header">Products CRUD Page</div>
+            <div class="card-block">
+                <div class="card-text">
+                    <div class="clr-row">
+                        <div class="clr-col-lg-12 clr-col-md-12 clr-col-12">
+                            <form clrForm>
+                                <clr-input-container>
+                                    <label>Name of the Product</label>
+                                    <input clrInput [(ngModel)]="createRequest.name" required type="text" name="name" />
+									<clr-control-helper>Write the name of the Product that you want to create</clr-control-helper>
+                                </clr-input-container>
+
+								<clr-input-container>
+                                    <label>SKU Code of the Product</label>
+                                    <input clrInput [(ngModel)]="createRequest.SKUCode" required type="text" name="name" />
+									<clr-control-helper>SKU of this product</clr-control-helper>
+                                </clr-input-container>
+
+								<clr-textarea-container>
+                                    <label>Description of the Product</label>
+                                    <input clrTextarea [(ngModel)]="createRequest.description" required type="text" name="description" />
+									<clr-control-helper>Write a briefly description of him</clr-control-helper>
+                                </clr-textarea-container>
+
+								<clr-input-container>
+                                    <label>Price of the Product</label>
+                                    <input clrInput [(ngModel)]="createRequest.price" required type="number" name="price" />
+									<clr-control-helper>Inform the price</clr-control-helper>
+                                </clr-input-container>
+
+								<clr-select-container>
+                                    <label>Category of this SubCategory</label>
+                                    <select clrSelect name="category" [(ngModel)]="createRequest.subCategoryId" >
+                                        <option value="" disabled selected> Select a category </option>
+                                        <option *ngFor="let item of subCategoriesList" [ngValue]="item.id" placeholder = null>
+                                            {{ item.name }}
+                                        </option>
+                                    </select>
+                                </clr-select-container>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success float-items-right" (click)="save()">Save</button>
+            </div>
+        </div>
+		<div class="card">
+            <div class="card-header">Products</div>
+            <div class="card-block">
+                <div class="card-text">
+                    <div class="clr-row">
+                        <div class="clr-col-lg-12 clr-col-md-12 clr-col-12">
+                            <clr-datagrid>
+                                <clr-dg-column>Name</clr-dg-column>
+								<clr-dg-column>SubCategory</clr-dg-column>
+								<clr-dg-column>Delete Action</clr-dg-column>
+
+                                <clr-dg-row *ngFor="let item of list" [clrDgItem]="list">
+                                    <clr-dg-cell>{{item.name}}</clr-dg-cell>
+									<clr-dg-cell>{{item.subCategory}}</clr-dg-cell>
+                                    
+									<clr-dg-cell>
+                                        <button class="btn btn-danger float-items-right" (click)="delete(item.id)">Delete</button>
+                                    </clr-dg-cell>
+                                </clr-dg-row>
+                            </clr-datagrid>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

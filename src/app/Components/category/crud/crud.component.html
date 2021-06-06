@@ -1,0 +1,46 @@
+<div class="clr-col-12">
+    <div class="content-area">
+        <div class="card">
+            <div class="card-header">Category CRUD Page</div>
+            <div class="card-block">
+                <div class="card-text">
+                    <div class="clr-row">
+                        <div class="clr-col-lg-12 clr-col-md-12 clr-col-12">
+                            <form clrForm>
+                                <clr-input-container>
+                                    <label>Name of the Category</label>
+                                    <input clrInput [(ngModel)]="createRequest.name" required type="text" name="name" />
+									<clr-control-helper>Write the name of the category that you want to create</clr-control-helper>
+                                </clr-input-container>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success float-items-right" (click)="save()">Save</button>
+            </div>
+        </div>
+		<div class="card">
+            <div class="card-header">Categories</div>
+            <div class="card-block">
+                <div class="card-text">
+                    <div class="clr-row">
+                        <div class="clr-col-lg-12 clr-col-md-12 clr-col-12">
+                            <clr-datagrid>
+                                <clr-dg-column>Name</clr-dg-column>
+                                <clr-dg-column>Delete Action</clr-dg-column>
+
+                                <clr-dg-row *ngFor="let item of list" [clrDgItem]="list">
+                                    <clr-dg-cell>{{item.name}}</clr-dg-cell>
+                                    
+									<clr-dg-cell>
+                                        <button class="btn btn-danger float-items-right" (click)="delete(item.id)">Delete</button>
+                                    </clr-dg-cell>
+                                </clr-dg-row>
+                            </clr-datagrid>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
