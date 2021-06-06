@@ -14,3 +14,12 @@ export interface CreateProductRequest {
 	description: string;
 	subCategoryId: number;
 }
+
+export interface SearchProduct {
+	name: string;
+	price: number;
+	SKUCode: string;
+	description: string;
+	categoryId: number;
+	subCategoryId: number;
+}

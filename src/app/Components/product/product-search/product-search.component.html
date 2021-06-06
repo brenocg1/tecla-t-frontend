@@ -1,7 +1,7 @@
 <div class="clr-col-12">
     <div class="content-area">
         <div class="card">
-            <div class="card-header">Products Create Page</div>
+            <div class="card-header">Search for a Product - All fields are optional</div>
             <div class="card-block">
                 <div class="card-text">
                     <div class="clr-row">
@@ -9,44 +9,35 @@
                             <form clrForm>
                                 <clr-input-container>
                                     <label>Name of the Product</label>
-                                    <input clrInput [(ngModel)]="createRequest.name" required type="text" name="name" />
+                                    <input clrInput [(ngModel)]="searchRequest.name" required type="text" name="name" />
 									<clr-control-helper>Write the name of the Product that you want to create</clr-control-helper>
                                 </clr-input-container>
 
 								<clr-input-container>
                                     <label>SKU Code of the Product</label>
-                                    <input clrInput [(ngModel)]="createRequest.SKUCode" required type="text" name="name" />
+                                    <input clrInput [(ngModel)]="searchRequest.SKUCode" required type="text" name="name" />
 									<clr-control-helper>SKU of this product</clr-control-helper>
                                 </clr-input-container>
 
 								<clr-textarea-container>
                                     <label>Description of the Product</label>
-                                    <input clrTextarea [(ngModel)]="createRequest.description" required type="text" name="description" />
+                                    <input clrTextarea [(ngModel)]="searchRequest.description" required type="text" name="description" />
 									<clr-control-helper>Write a briefly description of him</clr-control-helper>
                                 </clr-textarea-container>
 
 								<clr-input-container>
                                     <label>Price of the Product</label>
-                                    <input clrInput [(ngModel)]="createRequest.price" required type="number" name="price" />
+                                    <input clrInput [(ngModel)]="searchRequest.price" required type="number" name="price" />
 									<clr-control-helper>Inform the price</clr-control-helper>
                                 </clr-input-container>
 
-								<clr-select-container>
-                                    <label>SubCategory of this Product</label>
-                                    <select clrSelect name="category" [(ngModel)]="createRequest.subCategoryId" >
-                                        <option value="" disabled selected> Select a category </option>
-                                        <option *ngFor="let item of subCategoriesList" [ngValue]="item.id" placeholder = null>
-                                            {{ item.name }}
-                                        </option>
-                                    </select>
-                                </clr-select-container>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card-footer">
-                <button class="btn btn-success float-items-right" (click)="save()">Save</button>
+                <button class="btn btn-success float-items-right" (click)="search()">Search</button>
             </div>
         </div>
 		<div class="card">

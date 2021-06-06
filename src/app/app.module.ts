@@ -10,13 +10,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SubCrudComponent } from './Components/subCategory/sub-crud/sub-crud.component';
 import { ProductHomeComponent } from './Components/product/product-home/product-home.component';
+import { ProductSearchComponent } from './Components/product/product-search/product-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrudComponent,
     SubCrudComponent,
-    ProductHomeComponent
+    ProductHomeComponent,
+    ProductSearchComponent,
   ],
   imports: [
     BrowserModule,

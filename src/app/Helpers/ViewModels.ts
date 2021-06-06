@@ -13,5 +13,8 @@ export interface ProductViewModel {
 	price: number;
 	description: string;
 	subCategory: string;
-	skuCode: string;	
+	category: string;
+	skuCode: string;
+	categoryId: number;
+	subCategoryId: number;	
 }
